@@ -1,0 +1,15 @@
+class Solution {
+    public int subtractProductAndSum(int n) {
+        if (n==1){return 0;}
+        int sum=0;
+        int product=1;
+        int num=n;
+        for(int i=1;i<Math.log10(n)+1;i++){
+            int rem=num%10;
+            sum+=rem;
+            product*=rem;
+            num/=10;
+        }
+        return product-sum;
+    }
+}
