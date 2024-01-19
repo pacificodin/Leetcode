@@ -1,0 +1,17 @@
+class Solution {
+    public int peakIndexInMountainArray(int[] arr) {
+        int start = 0, end = arr.length - 1;
+        while (start != end) {  // or use while(start<end)
+            int mid = start + (end - start) / 2;
+            if (arr[mid] < arr[mid + 1]) {
+                // this indicate the we are in increasing part of array
+                start = mid + 1;
+            } else {
+                //this indicate the we are in decreasing part of array
+                end = mid;
+            }
+        }
+        // this is use for minimum use of memory {System.gc();}
+        return start;
+    }
+}
