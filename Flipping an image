@@ -1,0 +1,20 @@
+class Solution {
+    public int[][] flipAndInvertImage(int[][] image) {
+       for (int i = 0; i < image.length; i++) {
+            Reverse(image[i]);
+        }
+        for (int i = 0; i < image.length; i++) {
+            for (int j = 0; j < image.length; j++) {
+                image[i][j] = image[i][j] ^ 1;
+            }
+        }
+        return image; 
+    }
+    void Reverse(int[] arr) {
+        for (int i = 0; i < arr.length / 2; i++) {
+            int temp = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = arr[i];
+            arr[i] = temp;
+        }
+    }
+}
